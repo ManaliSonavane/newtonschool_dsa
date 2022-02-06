@@ -12,6 +12,7 @@ public class Main
 		}
 		int ans=0,count=0;
 	    for(int i=1;i<n;i++){
+	    //compare 2nd building with first n so on.
 	        if(arr[i] > arr[i-1]){
 	            count=0;
 	        }
