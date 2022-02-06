@@ -6,20 +6,21 @@ import java.util.*; // contains Collections framework
 class Main {
 	public static void main (String[] args) {
         Scanner s1= new Scanner(System.in);
-		long l=s1.nextLong();
+	long l=s1.nextLong();
         long r=s1.nextLong();
         long k=s1.nextLong();
-		long count=0;
+	long count=0;
 		//for(long i=l;i<=r;i++){
 			//if(i%k==0){
 			//count++;
 			//}
 		//}
-		count= l/k;
-		if(l%k==0){
-			count--;
-		}
-		count= (r/k)-count;
+	//l=12,k=3,r=44  l/k=4(it gives nos divisible by 3 from 1 to 12) 44/k=14(it gives nos divisible by 3 from 1 to 44)	
+	count= l/k;
+	if(l%k==0){
+	  count--;
+	}
+	count= (r/k)-count;
        System.out.println(count);
 	}
 }
