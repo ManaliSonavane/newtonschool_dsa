@@ -1,0 +1,25 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	public static void main (String[] args) {
+        Scanner s1= new Scanner(System.in);
+		long l=s1.nextLong();
+        long r=s1.nextLong();
+        long k=s1.nextLong();
+		long count=0;
+		//for(long i=l;i<=r;i++){
+			//if(i%k==0){
+			//count++;
+			//}
+		//}
+		count= l/k;
+		if(l%k==0){
+			count--;
+		}
+		count= (r/k)-count;
+       System.out.println(count);
+	}
+}
