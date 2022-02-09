@@ -1,0 +1,57 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s= new Scanner(System.in);
+        int n= s.nextInt();
+        Node head= new Node();
+		Node temp=head;
+		while(n>0){
+		    head.x =s.nextInt();
+		    head.next =new Node();
+		    head =head.next;
+		    n--;
+		}
+		head=temp;
+		int k= s.nextInt();
+		int value= s.nextInt();
+		printll(head);
+		insertkth(head,k,value);
+		printll(head);
+	}
+	
+	
+	public static void insertkth(Node head, int k, int value){
+	    //creating new node to be inserted
+	    Node newNode= new Node();
+	    newNode.x = value;
+	    //inserting at kth position
+	    Node cur = head;
+	    Node prev = null;
+	    while(k-1>0)//or(k>1)
+	    {
+	        prev=cur;
+	        cur=cur.next;
+	        k--;
+	    }//at end of this loop we have current at kth position , prev at k-1; 
+	    prev.next= newNode;
+	    newNode.next=cur;
+	}
+	public static void printll(Node head){
+	    Node temp=head;
+	    while(temp.next!=null){
+	      System.out.print(temp.x+" ");
+	      temp=temp.next;
+	}
+	 System.out.println();
+ }
+}
+
+
+
+class Node{
+    int x;
+    Node next;
+}
