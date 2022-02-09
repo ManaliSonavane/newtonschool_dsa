@@ -10,3 +10,9 @@ class Main {
 			System.out.print((int)out);
 	}
 }
+
+
+//Sample Input 
+//0.7
+//Sample Output 
+//30
