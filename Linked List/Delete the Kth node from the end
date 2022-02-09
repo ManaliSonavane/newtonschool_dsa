@@ -1,0 +1,56 @@
+/*
+class Node {
+    Node next;
+    int val;
+
+    Node(int val) {
+        this.val = val;
+        next = null;
+    }
+}
+*/
+
+public static Node deleteElement(Node head,int k) {
+             if(head==null){
+                 return head;
+             }
+             //To delete node from end we need to know length of LL so we are writing a separate functn for it.
+             int n= getlength(head);
+             //if n==k
+             //prev.next= null (null pointer exception);
+             if(n==k){
+                 head=head.next;
+                 return head;
+             }
+
+             //to reach k-1th position we have l;
+             int l= n-k;
+             Node prev=null;
+             Node cur= head;
+             while(l>0){
+                prev= cur;
+                cur=cur.next;
+                l--;
+             } 
+             prev.next= cur.next;
+             return head;
+             //if n==k
+             //prev.next= null (null pointer exception);
+}
+public static int getlength(Node head){
+               Node temp=head;
+               int size=0;
+               while(temp!=null){
+                      temp=temp.next;
+                      size++; 
+               }
+               return size;
+}
+
+/*
+Input 1:
+5 3
+1 2 3 4 5
+
+Output 1:
+1 2 4 5*/
