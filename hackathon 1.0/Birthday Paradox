@@ -1,0 +1,12 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+
+class Main {
+			public static void main (String[] args){
+			Scanner scn=new Scanner(System.in);
+			double p = scn.nextDouble();
+			double out = Math.ceil(Math.sqrt(2*365*Math.log(1/(1-p))));
+			System.out.print((int)out);
+	}
+}
