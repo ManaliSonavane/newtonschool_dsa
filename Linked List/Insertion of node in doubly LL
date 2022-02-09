@@ -1,0 +1,48 @@
+/*
+
+class Node {
+    Node next;
+    Node prev;
+    int val;
+
+    Node(int val) {
+        this.val = val;
+        next = null;
+        prev = null;
+    }
+}
+*/
+
+
+public static Node insertnew(Node head,int k) {    
+    if (head==null){
+        Node newNode= new Node(k);
+        head =newNode;
+        return head;
+    }    
+    Node temp = head;
+    while(temp!=null){
+        if(temp.val>= k){
+            Node newNode= new Node(k);
+            newNode.next =temp;
+            newNode.prev= temp.prev;
+            if(temp.prev==null){
+                head= newNode;
+                return head;
+            }
+            else{
+                temp.prev.next= newNode;
+                return head;
+            }
+        }
+        if(temp.next==null){
+            Node newNode= new Node(k);
+            newNode.prev= temp;
+            newNode.next= null;
+            temp.next= newNode;
+            break;
+        }
+        temp= temp.next;
+    }
+    return head;
+    }
