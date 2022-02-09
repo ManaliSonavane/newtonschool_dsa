@@ -1,0 +1,38 @@
+/*
+
+class Node {
+    Node next;
+    Node prev;
+    int val;
+
+    Node(int val) {
+        this.val = val;
+        next = null;
+        prev = null;
+    }
+}
+*/
+
+
+public static Node insertnew(Node head,int K, int P) {  
+    int count=1;
+    if(P==1){
+        Node newNode= new Node(K);
+        newNode.next=head;
+        head.prev= newNode;
+        head= newNode;
+        return head;
+    }   
+    Node temp=head;
+    while(count != (P-1)){
+        temp= temp.next;
+        count++;
+    }
+    Node newNode= new Node(K);    
+    newNode.next= temp.next;
+    temp.next.prev= newNode;
+    temp.next= newNode;
+    newNode.prev=temp;
+    return head;
+    
+    }
