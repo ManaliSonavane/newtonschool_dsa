@@ -18,6 +18,7 @@ public static Node deleteElement(Node head,int k) {
              int n= getlength(head);
              //if n==k
              //prev.next= null (null pointer exception);
+             //n=4 k=4 from end so we have to delete first node;
              if(n==k){
                  head=head.next;
                  return head;
@@ -53,4 +54,6 @@ Input 1:
 1 2 3 4 5
 
 Output 1:
-1 2 4 5*/
+1 2 4 5
+
+Time Complexity : O(n)*/
