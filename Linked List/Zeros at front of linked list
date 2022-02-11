@@ -1,0 +1,91 @@
+/*
+class Node{
+    int data;
+    Node next;
+    Node(int d){
+        data=d;
+        next=null;
+    }
+}
+*/
+static public Node moveZeroes(Node head)
+{
+             if(head==null){
+                 return head;
+             }
+             Node temp=head;
+             //counting no of zeroes
+             int noofzeroes=0;
+             while(temp!=null){
+                  if(temp.data==0){
+                      noofzeroes++;
+                  }
+                  temp=temp.next;
+             }
+             //Created a new LL with first node with value 0(newhead) and newtemp pointing newhead
+             Node newhead= null;
+             Node newtemp = null;
+             //as we have already created one node we have to take noofzeroes-1 to create remaining nodes;
+             while(noofzeroes > 0){
+                if(newhead==null){
+                    newhead= new Node(0);
+                    newtemp= newhead;
+                }
+                else{
+                newtemp.next= new Node(0);
+                newtemp= newtemp.next;
+                }
+                noofzeroes--;
+             }
+             // adding non-zero values
+              temp=head;
+              while(temp!=null){
+                  if(temp.data!=0){
+                      int data=temp.data;
+                      if(newhead==null){
+                          newhead= new Node(data);
+                          newtemp= newhead;
+                      }
+                      //newtemp here is at last node of zero
+                      else{ 
+                      newtemp.next= new Node(data);
+                      newtemp=newtemp.next;
+                      }
+                  } 
+                  temp=temp.next;
+              }
+            return newhead;
+}
+/*
+Input:
+2
+10
+0 4 0 5 0 2 1 0 1 0
+7
+1 1 2 3 0 0 0
+
+Output:
+0 0 0 0 0 1 1 2 5 4
+0 0 0 3 2 1 1
+
+Explanation:
+Testcase 1: 
+Original list was 0->4->0->5->0->2->1->0->1->0->NULL.
+After processing list becomes 0->0->0->0->0->4->5->2->1->1->NULL.
+
+Testcase 2: 
+Original list was 1->1->2->3->0->0->0->NULL.
+After processing list becomes 0->0->0->1->1->2->3->NULL.
+
+
+
+input
+2
+10
+0 4 0 5 0 2 1 0 1 0
+output
+0 0 0 0 0 1 1 2 5 4 
+4 3 2 1 
+4
+1 2 3 4
+*/
