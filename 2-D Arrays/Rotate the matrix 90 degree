@@ -14,7 +14,7 @@ class Main {
 	        }    
 	    }
 		//This method only applicable for square matrix(equal rows n cols)
-		//1 times 2 eles are placed so for n/2 times n eles are sorted
+		//1 time 2 eles are displaced so for n times 2n eles are sorted(180) we dont want it so n/2
 	           for(int i=0;i<n/2;i++){ 
 				 for(int j=i;j<n-i-1;j++)
 				 {
