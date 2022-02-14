@@ -1,0 +1,34 @@
+import java.util.*;
+import java.io.*;
+
+class Main {
+    public static void main(String[] args) {
+          ArrayList<Character> list= new ArrayList<Character>();
+          list.add('a');
+          list.add('b');
+          list.add('c');
+          list.add('d');
+          System.out.println(list);
+          System.out.println(list.isEmpty());
+          list.set(1,'r');
+          System.out.println(list);
+          System.out.println(list.contains('c')); 
+          System.out.println(Collections.frequency(list,'d'));
+          int[] arr= {1, 2, 3, 4, 5};
+          //ArrayList<Integer> alist = Arrays.asList(arr);
+           List<Integer> alist= new ArrayList<Integer>();
+          for(int i=0;i<5;i++){
+              alist.add(arr[i]);
+          }System.out.print(alist);
+    }
+}
+/*
+
+[a, b, c, d]
+false
+[a, r, c, d]
+true
+1
+[1, 2, 3, 4, 5]
+
+*/
