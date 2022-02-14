@@ -1,0 +1,77 @@
+/*
+    int top=-1; // index of current top
+    int a[] // array which contain element of stack 
+*/
+// function to add element in the stack
+//x=element to be added
+//size=maximum size of array
+ void push(int x,int size)
+    {
+              //enter  your code here
+              if(top==size-1){
+                 System.out.println("Stack overflow");
+              }
+              else{
+                  top++;
+                  a[top]=x;
+              }
+    }
+
+    // Function to pop element from stack
+     void pop()
+    {
+               // enter your code here
+               if(top>=0){
+                   top--;
+               }
+               else{
+                   System.out.println("Stack underflow");
+               }
+    }
+
+     void top()
+    {
+                  //enter your code here
+                  if(top>=0){
+                   System.out.println(a[top]);
+               }
+                  else{
+                   System.out.println("Empty stack");
+                 }  
+    }
+    
+/*
+Sample Input:-
+6 3
+pop
+push 3
+push 2
+push 4 
+push 6
+top
+
+Sample Output:-
+Stack underflow
+Stack overflow
+4
+
+Explanation:-
+Here maximum size of the array is 3, so element 6 can not be added to stack
+
+Sample input:-
+8 4
+push 2
+top
+push 4
+top
+push 6
+top
+push 8
+top
+
+Sample Output:-
+2
+4
+6
+8
+*/
