@@ -1,0 +1,61 @@
+/*  
+    
+class Node {
+    Node next;
+    int val;
+
+    Node(int val) {
+        this.val = val;
+        next = null;
+       
+    }
+}
+ */
+
+ Node top = null;
+public void push(int x){
+                //enter your code here
+                Node newNode= new Node(x);
+                if(top==null){
+                    top= newNode;
+                }
+                else{
+                    newNode.next=top;
+                    top= newNode;
+                }
+}
+
+public void pop(){
+                //enter your code here
+                if(top!=null){
+                    top=top.next;
+                }
+}
+
+public void top(){
+               //enter your code here
+               if(top==null){
+                   System.out.println("0");
+               }
+               else{
+                   System.out.println(top.val);
+               }
+}
+
+
+/*
+Input:
+7
+push 1
+push 2 
+top
+pop
+top
+pop
+top
+
+Output:
+2
+1
+0
+*/
