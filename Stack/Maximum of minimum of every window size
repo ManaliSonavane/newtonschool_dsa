@@ -1,0 +1,51 @@
+import java.io.*; 
+import java.util.*; 
+
+
+class Main {
+	public static void main (String[] args) {
+                    Scanner s=new Scanner(System.in);
+					int n=s.nextInt();
+					int[] arr= new int[n];
+					for(int i=0;i<n;i++){
+						arr[i]= s.nextInt();
+					}
+					int[] left= new int[n+1];
+					int[] right= new int[n+1];
+
+					Arrays.fill(left,-1);
+                    
+					Stack<Integer> st= new Stack<Integer>();//Store indices
+					for(int i=0;i<n;i++){
+						while(st.isEmpty() != true && arr[st.peek()]>= arr[i])
+							st.pop();
+						if(st.isEmpty() !=true)
+							left[i]= st.peek();
+							st.push(i);
+					  	
+				
+			}
+			        Arrays.fill(right,n);
+		            st= new Stack<Integer>();	 
+					for(int i=n-1;i>=0;i--){
+						while(st.isEmpty() != true && arr[st.peek()]>= arr[i])
+						 st.pop();
+						if(st.isEmpty() !=true)
+							right[i]= st.peek();
+							st.push(i);
+					 	
+				
+			}
+			 int[] ans=new int[n+1];
+			 for(int i=0;i<n;i++){
+				 int index= right[i]- left[i] -1;
+				 ans[index]= Math.max(ans[index], arr[i]);
+			 }
+             for(int i=n-1;i>=1;i--){
+				 ans[i]= Math.max(ans[i], ans[i+1]);
+			 }
+			 for(int i=1;i<=n;i++){
+				 System.out.print(ans[i]+" ");
+			 }
+	}
+}
