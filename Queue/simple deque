@@ -1,0 +1,37 @@
+import java.util.*;
+import java.io.*;
+ class Main {
+     public static void main(String[] args) {
+         Scanner s=new Scanner(System.in);
+         Deque<Integer> dq= new LinkedList<Integer>();
+         dq.add(1);
+         dq.add(2);
+         dq.add(3);
+         System.out.println(dq);
+         System.out.println(dq.size());
+         System.out.println(dq.peek());
+         System.out.println(dq);
+         dq.addFirst(4);
+         System.out.println(dq);
+         dq.addLast(5);
+         System.out.println(dq);
+         dq.offer(10);//adds at rear end 
+         System.out.println(dq);
+         dq.offerFirst(9);
+         System.out.println(dq);
+         dq.offerLast(9);
+         System.out.println(dq);
+    }
+}
+
+/*
+[1, 2, 3]
+3
+1
+[1, 2, 3]
+[4, 1, 2, 3]
+[4, 1, 2, 3, 5]
+[4, 1, 2, 3, 5, 10]
+[9, 4, 1, 2, 3, 5, 10]
+[9, 4, 1, 2, 3, 5, 10, 9]
+*/
