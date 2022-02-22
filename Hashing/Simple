@@ -1,0 +1,30 @@
+import java.util.*;
+import java.io.*;
+class Main {
+    public static void main(String[] args) {
+        Map<Integer, String> map= new HashMap<Integer, String>();
+        map.put(1,"Newton");
+        map.put(2,"Tesla");
+        map.put(3,"Einstein");
+        map.put(1,"Faraday");
+        System.out.println(map); 
+        System.out.println(map.size()); 
+         System.out.println(map.get(1));
+        Map<String,Integer> map2= new HashMap<>();
+        map2.put("A",1);
+        map2.put("B",2);
+        map2.put("C",3);
+        
+        System.out.println(map2);
+        System.out.println(map2.get("A"));
+    }
+}
+
+
+/*
+{1=Faraday, 2=Tesla, 3=Einstein}
+3
+Faraday
+{A=1, B=2, C=3}
+1
+*/
