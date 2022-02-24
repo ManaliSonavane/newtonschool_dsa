@@ -1,0 +1,22 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+import java.util.Scanner;
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	public static void main (String[] args) {
+      Scanner s1 = new Scanner(System.in);
+			int n = s1.nextInt();
+			int[] a = new int[n];
+			
+			for(int i = 0; i < n; i++){
+				a[i] = s1.nextInt();
+			}	
+			for(int i=0;i<n;i++)
+			{
+				//int  r= a[i];
+				System.out.print(a[a[i]]+" ");
+			}		
+	}
+}
