@@ -1,0 +1,39 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	public static void main (String[] args) {
+            Scanner s1 = new Scanner(System.in);
+			int n = s1.nextInt();
+			int[] a = new int[n];
+			
+			for(int i = 0; i < n; i++){
+				a[i] = s1.nextInt();
+			}	
+		   modify(a,n);
+		   for(int i = 0; i <n; i++){
+			System.out.print(a[i]+" ");
+		   }
+	}
+	static void modify(int arr[], int n){
+        	int prev = arr[0];
+            arr[0] = arr[0] * arr[1];
+				
+			for(int i = 1; i < n-1; i++){
+		      int curr = arr[i];
+              arr[i] = prev * arr[i+1];
+              prev = curr;
+			}
+			arr[n-1] = prev * arr[n-1];
+	}
+}
+/*
+Sample Input :-
+5
+2 3 4 5 6
+
+Sample Output:-
+6 8 15 24 30
+*/
