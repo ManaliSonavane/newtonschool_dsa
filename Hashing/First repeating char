@@ -1,0 +1,55 @@
+import java.io.*; 
+import java.util.*; 
+
+//First repeting char of a string
+class Main {
+	public static void main (String[] args) {
+              Scanner s= new Scanner(System.in);
+              String str= s.next();
+
+              HashMap<Character , Integer> map= new HashMap<>();//generics in java
+              
+              for(int i=0;i<str.length();i++){
+                 char ch = str.charAt(i);
+                 //char present or not 
+                 if(map.containsKey(ch))
+                 {
+                     int count= map.get(ch);
+                     map.put(ch, count+1);
+                 }
+                 else{
+                     map.put(ch,1);
+                 }
+              }
+              //System.out.println(map);  //(char and their counts);
+              //System.out.println(map.get('z'));
+              //System.out.println(map.getOrDefault('z' , -1));
+              for(int i=0;i<str.length();i++){
+                  char ch= str.charAt(i);
+                  if(map.get(ch) > 1){
+                      System.out.println("First repeating char is at "+ i +" and is "+ch);
+                      break;
+                  }
+              }
+    }
+}
+/*
+ip
+masaapop
+
+op
+First repeating char is at 1 and is a
+*/
+
+
+
+/*
+for last repeating
+for(int i=str.length()-1;i>=0;i++){
+                  char ch= str.charAt(i);
+                  if(map.get(ch) > 1){
+                      System.out.println("Last repeating char is at "+ i +" and is "+ch);
+                      break;
+                  }
+              }
+*/              
