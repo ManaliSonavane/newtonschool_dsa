@@ -1,0 +1,40 @@
+import java.io.*; 
+import java.util.*; 
+
+//First repeting char of a string
+class Main {
+	public static void main (String[] args) {
+              Scanner s= new Scanner(System.in);
+              String str= s.next();
+
+              HashMap<Character , Integer> map= new HashMap<>();//generics in java
+              
+              for(int i=0;i<str.length();i++){
+                 char ch = str.charAt(i);
+                 //char present or not 
+                 if(map.containsKey(ch))
+                 {
+                     int count= map.get(ch);
+                     map.put(ch, count+1);
+                 }
+                 else{
+                     map.put(ch,1);
+                 }
+              }
+              System.out.println(map);  //(char and their counts);
+              System.out.println(map.get('z'));
+              System.out.println(map.getOrDefault('z' , -1));
+    }
+}
+
+
+/*
+output:
+
+{p=1, a=3, s=1, m=1, o=1}
+null
+-1
+
+input:
+masaapo
+*/
