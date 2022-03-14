@@ -9,7 +9,7 @@ class Main {
         map.put(1,"Faraday");
         System.out.println(map); 
         System.out.println(map.size()); 
-         System.out.println(map.get(1));
+        System.out.println(map.get(1));
         Map<String,Integer> map2= new HashMap<>();
         map2.put("A",1);
         map2.put("B",2);
