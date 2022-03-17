@@ -1,4 +1,6 @@
-// Java implementation of QuickSort
+//tc avg: O(nlogn)       tc worst: O(n*n)
+//Sc: O(1)
+//low,high,pivot,partition, i counts space for smaller numbers than pivot
 import java.io.*;
 import java.util.*;
 
