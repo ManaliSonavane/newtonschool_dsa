@@ -1,0 +1,27 @@
+//HashTable 
+
+import java.util.*;
+import java.util.Hashtable;
+import java.util.Iterator;
+public class Main{
+    public static void main(String[] args){
+        Hashtable<Integer,String> ht= new Hashtable<>();
+
+        ht.put(1,"Manali");
+        ht.put(2,"Nikita");
+        ht.put(3,"Shruti");
+        ht.put(4,"Srushti");
+        System.out.println(ht);
+        //getting value
+        System.out.println(ht.get(3));
+        System.out.println(ht.remove(3));
+        System.out.println(ht); 
+        System.out.println(ht.size());
+        System.out.println(ht.containsKey(10));
+        System.out.println(ht.containsValue("Nikita")); 
+        System.out.println(ht.replace(4,"Shruti")); 
+        System.out.println(ht); 
+        System.out.println(ht.values()); 
+        System.out.println(ht.keySet());
+    }
+}
