@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+     public static void main(String args[])
+    {
+        int arr[] = { 10,9,8,7,6,5,4,3,2,1 };
+        int n= arr.length;
+        int x= 3;
+        int res= binary(arr,0,n-1, x);
+        System.out.print(res);
+    }
+   public static int binary(int arr[], int l, int r, int x)
+    {
+        int mid = l + (r - l) / 2;
+        if (l<=r) {
+            if (arr[mid] == x)
+                return mid;
+ 
+         
+            if (arr[mid] > x)
+                return binary(arr, mid+1, r, x);
+ 
+            if(arr[mid] < x)
+                return binary(arr, l,mid-1, x);
+        }
+        return -1;
+    }
+}
