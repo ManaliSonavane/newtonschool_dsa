@@ -24,7 +24,7 @@ class Main
 	      return binarysearch(arr, mid+1, ub,key);   
 	    }
 	    
-	     if(key > arr[ub] && arr[mid] <= key){
+	    if(key > arr[ub] && arr[mid] <= key){
 	            return binarysearch(arr, lb, mid-1,key);
 	        } 
 	      return binarysearch(arr, mid+1, ub,key);  
