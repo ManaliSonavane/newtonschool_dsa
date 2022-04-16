@@ -23,10 +23,10 @@ public class Main{
                 return mid;
  
          
-            if (arr[mid] > x)
+            else if(arr[mid] > x)
                 return binary(arr, l, mid - 1, x);
  
-            if(arr[mid] < x)
+            else
                 return binary(arr, mid + 1, r, x);
         }
         return -1;
