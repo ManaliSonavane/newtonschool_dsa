@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+//Number of times array is rotated is given by index of smallest element
+public class Main{
+     public static void main(String args[])
+    {
+        int arr[] = {10,12,13,2,3,4};
+        int n= arr.length;
+        int res= binary(arr,n,0,n-1);
+        System.out.print(res);
+    }
+   public static int binary(int arr[], int n,int low,int high)
+    {
+       while(low<=high){
+           //checking if array is not at all rotated
+           if(arr[low]<=arr[high]){
+               return low;
+           }
+           int mid=low+(high-low)/2;
+           //%n so that after last ele the control goes to 1st ele
+           int next=(mid+1)%n;
+           //+n and %n so that the index does not get out of bound i.e in minus
+           int prev=(mid+n-1)%n;
+           //if ele present at mid
+           if(arr[mid]<= arr[next] && arr[mid]<=arr[prev]){
+               return mid;
+           }
+           //if ele is present in left
+           else if(arr[mid] <= arr[high]){
+               high=mid-1;
+           }
+           //if ele is present in right
+           else if(arr[mid] >= arr[low]){
+               low=mid+1;
+           }
+       }
+       return -1;
+    }
+}
