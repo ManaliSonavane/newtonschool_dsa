@@ -27,10 +27,10 @@ public class Main{
                 return mid;
  
          
-            if (arr[mid] > x)
+            else if(arr[mid] > x)
                 return binarydsc(arr, mid+1, r, x);
  
-            if(arr[mid] < x)
+            else
                 return binarydsc(arr, l,mid-1, x);
         }
         return -1;
@@ -38,15 +38,15 @@ public class Main{
     public static int binaryasc(int arr[], int l, int r, int x)
     {
         int mid = l + (r - l) / 2;
-        if (l<=r) {
+        while(l<=r) {
             if (arr[mid] == x)
                 return mid;
  
          
-            if (arr[mid] > x)
+            else if(arr[mid] > x)
                 return binaryasc(arr,l, mid-1, x);
  
-            if(arr[mid] < x)
+            else
                 return binaryasc(arr,mid+1,r, x);
         }
         return -1;
