@@ -13,7 +13,7 @@ public class Main{
    public static int binary(int arr[], int l, int r, int x)
     {
         int mid = l + (r - l) / 2;
-        if (l<=r) {
+        while(l<=r) {
             if (arr[mid] == x)
                 return mid;
  
