@@ -19,8 +19,7 @@ public class Main{
    public static int binary(int arr[], int x)
     {
         int l=0;
-        int r=arr.length-1;
-        
+        int r=arr.length-1;    
         int fo=-1;
         while(l<=r) {
             int mid = l + (r - l) / 2;
@@ -39,5 +38,4 @@ public class Main{
         }
         return fo;
     }
-   
 }
