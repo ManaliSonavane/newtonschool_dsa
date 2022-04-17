@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		//Find an element in a sorted rotated array. 
+		int[] arr= {1,2,3,5,4};
+		int x=4;
+		int n=arr.length;
+		int result= binarysearch(arr,0,n,x);
+		System.out.println(result);
+	}
+	public static int binarysearch(int[] arr,int start, int end, int x){
+	
+	    while(start<=end){
+	        int mid=start+(end-start)/2;
+	        if(arr[mid]==x){
+	            return mid;
+	        }
+	        if(arr[mid-1]>start && arr[mid-1]==x){
+	            return mid-1;
+	        }
+	        if(arr[mid+1]<=end && arr[mid+1]==x){
+	            return mid+1;
+	        }
+	        if(arr[mid]>x){
+	            return binarysearch(arr,start,mid-2,x);
+	        }
+	        else{
+	            return binarysearch(arr,mid+2,end,x);
+	        }
+	    }
+	    return -1;
+	}
+}
