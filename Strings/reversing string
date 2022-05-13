@@ -1,0 +1,29 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	 //Reversing a String
+	 Scanner s= new Scanner(System.in);
+	 String w= s.next();
+	 StringBuilder s1=new StringBuilder ("Backout");
+	 for(int i=w.length()-1;i>=0;i--){
+	     System.out.print(w.charAt(i));
+	 }
+	 System.out.println();
+	 
+	 for(int i=0; i<s1.length()/2;i++){
+	     int front=i;
+	     int back=s1.length()-1-i;
+	     
+	     char fc= s1.charAt(front);
+	     char bc= s1.charAt(back);
+	     
+	     s1.setCharAt(front, bc);
+	     s1.setCharAt(back, fc);
+	 }
+	 System.out.print(s1);
+	 //TC: 0 to n/2  as n is known so O(n);
+	 }
+}
