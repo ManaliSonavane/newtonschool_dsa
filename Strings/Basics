@@ -54,5 +54,27 @@ public class Main
 		else{
 		    System.out.println("not equal");
 		}
+		
+		// == and compareTo,equals
+		String n1="manali";
+		String n2="manali";
+		String n3= new String("manali");
+		System.out.println();
+		
+		//== checks words as well as the memory location too
+		if(new String("Tony") == new String("Tony")){
+		    System.out.println("equal");    
+		}
+		else{
+		    System.out.println("not equal");
+		}
+		//compareTo and equals just checks the content 
+		//n1.equals(n2)
+		if(n1.compareTo(n3)==0){
+		    System.out.println("equal");    
+		}
+		else{
+		    System.out.println("not equal");
+		}
 	}
 }
