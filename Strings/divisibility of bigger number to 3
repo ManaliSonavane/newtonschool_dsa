@@ -4,7 +4,6 @@ import java.io.*;
 public class Main
 {
 	public static void main(String[] args) {
-	 //Reversing a String
 	 Scanner s= new Scanner(System.in);
 	 String number= s.next();
 	 int sum=0;
