@@ -4,7 +4,10 @@ import java.io.*;
 public class Main
 {
 	public static void main(String[] args) {
-	  String s1="Manali";
+ 	        //Strings are IMMUTABLE, cannot change or delete or add anything in it after declaring it 
+		//to modify it we require new string
+		
+		String s1="Manali";
 		System.out.println(s1);
     
 		Scanner s= new Scanner(System.in);
@@ -76,5 +79,14 @@ public class Main
 		else{
 		    System.out.println("not equal");
 		}
+		
+		//substring n upper/lower case
+		String n1="manali";
+		String n2="SHRUTI";
+		System.out.println(n1.substring(0)); 
+		//Endind index is Exclusive i.e it is not included, here 1 and 2 are printed
+		System.out.println(n1.substring(1,3)); 
+		System.out.println(n1.toUpperCase()); 
+		System.out.println(n2.toLowerCase());
 	}
 }
