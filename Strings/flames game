@@ -1,0 +1,48 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	 //flames
+	 Scanner s= new Scanner(System.in);
+	 String s1= s.next();
+	 String s2= s.next();
+	 int[] arr1= new int[26];
+	 int[] arr2= new int[26];
+	 
+	 
+	 for(int i=0;i<s1.length();i++){
+	     int value= (int)s1.charAt(i)-(int)'a';
+	     arr1[value]++;
+	 }
+	 for(int i=0;i<s2.length();i++){
+	     int value= (int)s2.charAt(i)-(int)'a';
+	     arr2[value]++;
+	 }
+	 int sum=0;
+	 for(int i=0;i<26;i++){
+       sum=sum + Math.abs(arr1[i] - arr2[i]);
+	 }
+	 int ans= sum%6;
+	        if(ans==1){
+				System.out.println("Friends");
+			}
+			if(ans==2){
+				System.out.println("Love");
+			}
+			if(ans==3){
+				System.out.println("Affection");
+			}
+			if(ans==4){
+				System.out.println("Marriage");
+			}
+			if(ans==5){
+				System.out.println("Enemy");
+			}
+			if(ans==0){
+				System.out.println("Siblings");
+			}
+	 
+	 }
+}
