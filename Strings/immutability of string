@@ -1,0 +1,15 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		//Strings are immutable or unchangeable or unmodifiable
+		String s1= "weee";
+		System.out.println(s1.hashCode());
+		System.out.println(s1);
+		s1= s1+ "meee";
+		System.out.println(s1.hashCode());
+		System.out.println(s1);
+	}
+}
