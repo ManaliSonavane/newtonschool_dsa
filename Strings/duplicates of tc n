@@ -1,0 +1,29 @@
+import java.util.*;
+import java.io.*;
+//TC: n;
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		System.out.println(duplicateusingarray("code decode"));
+	}
+	
+	private static Set<Character> duplicateusingarray(String name){
+	     Set<Character> dups= new LinkedHashSet<>();
+	     
+	     int[] arrayforchar= new int[256];
+	     
+	     for(int i=0;i<name.length();i++){
+	         arrayforchar[name.charAt(i)]++;
+	     }
+	     
+	     for(int i=0;i<256;i++){
+	         if(arrayforchar[i]>1){
+	             dups.add((char) i);
+	         }
+	     }
+	     return dups;
+	}
+  }
+  //even though tc is good space complexity here is more due to size of 256 as few bytes are used 
