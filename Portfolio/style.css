@@ -1,0 +1,31 @@
+.container1{
+  display:grid;
+  grid-template-columns:230px 250px 312px;
+  width:50%;
+  box-shadow: 0 0px 18px -6px rgba(0,0,0,0.8);
+  border:1px solid;
+}
+.item{
+  height:100px;
+  background-color:lightblue;
+  padding:35px;
+}
+.container2{
+  display:grid;
+  grid-template-columns: 396px 396px;
+  width:50%;
+  border:1px solid; 
+}
+.item1{
+  height:470px;
+  padding:30px;
+  box-shadow: 0 12px 18px -6px rgba(0,0,0,0.8);
+}
+.cont{
+  margin-top:0px;
+}
+.name{
+  color:black;
+}
+
+
